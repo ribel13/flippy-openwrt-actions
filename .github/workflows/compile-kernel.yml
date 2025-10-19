@@ -96,6 +96,7 @@ on:
         default: "-ophub"
         type: choice
         options:
+          - -ophub
           - -ribel
 
 env:
