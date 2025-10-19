@@ -31,7 +31,7 @@ PACKAGE_OPENWRT=(
     "ak88" "e52c" "e54c" "h88k" "h88k-v3" "rock5b" "rock5c"
     "cm3" "e25" "photonicat" "r66s" "r68s" "rk3399"
     "e20c" "e24c" "h28k" "h66k" "h68k" "h69k" "h69k-max" "ht2" "jp-tvbox" "watermelon-pi" "yixun-rs6pro" "zcube1-max"
-    "s922x" "s922x-n2" "s905x3" "s905x2" "s912" "s905d" "s905"
+    "s922x" "s922x-n2" "s905x3" "s905x2" "s912" "s905d" "s905" "s905x"
     "beikeyun" "l1pro"
     "vplus"
     "qemu"
