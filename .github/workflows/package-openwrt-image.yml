@@ -20,12 +20,6 @@ on:
           - s922x_s905x3_s905x2_s912_s905d_s905
           - ak88
           - beikeyun
-          - cm3
-          - e20c
-          - e24c
-          - e25
-          - e52c
-          - e54c
           - ht2
           - h28k
           - h66k
@@ -34,10 +28,6 @@ on:
           - h69k-max
           - h88k
           - h88k-v3
-          - jp-tvbox
-          - l1pro
-          - photonicat
-          - qemu
           - r66s
           - r68s
           - rock5b
@@ -50,10 +40,6 @@ on:
           - s912
           - s922x
           - s922x-n2
-          - vplus
-          - watermelon-pi
-          - yixun-rs6pro
-          - zcube1-max
           - diy
       customize_rk3399:
         description: "Set customize rk3399 devices"
@@ -245,8 +231,8 @@ jobs:
             ### OpenWrt Image information
             - Default IP: 192.168.1.1
             - Default username: root
-            - Default password: password
-            - Default WIFI name: OpenWrt
+            - Default password: none
+            - Default WIFI name: Freedom-Wrt
             - Default WIFI password: none
             ### Install to EMMC
             - Login to OpenWrt → System → Amlogic Service → Install OpenWrt
