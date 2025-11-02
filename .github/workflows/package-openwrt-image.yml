@@ -17,6 +17,16 @@ on:
         type: choice
         options:
           - all
+          - s905x
+          - s905x-b860h
+          - s905x-nexbox-a95x
+          - s905x-t95
+          - s905x-tbee
+          - s905x-tx9
+          - s905x2
+          - s905x2-km3
+          - s905x2-x96max-2g
+          - s905x2-hg680fj
           - s922x_s905x3_s905x2_s912_s905d_s905
           - ak88
           - beikeyun
@@ -231,8 +241,8 @@ jobs:
             ### OpenWrt Image information
             - Default IP: 192.168.1.1
             - Default username: root
-            - Default password: none
-            - Default WIFI name: Freedom-Wrt
+            - Default password: root
+            - Default WIFI name: FreedomWrt
             - Default WIFI password: none
             ### Install to EMMC
             - Login to OpenWrt → System → Amlogic Service → Install OpenWrt
