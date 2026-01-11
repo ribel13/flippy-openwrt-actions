@@ -86,7 +86,7 @@ on:
           - -freedom
 
 env:
-  TZ: ETC/UTC
+  TZ: Etc/UTC
 
 jobs:
   build:
