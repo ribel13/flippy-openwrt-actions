@@ -37,7 +37,7 @@ PACKAGE_OPENWRT=(
     "100ask-dshanpi-a1" "e20c" "e24c" "h28k" "h66k" "h68k" "h69k" "h69k-max" "ht2"
     "jp-tvbox" "watermelon-pi" "yixun-rs6pro" "zcube1-max"
     "cm3" "e25" "photonicat" "r66s" "r68s" "rk3399"
-    "s922x" "s922x-n2" "s905x3" "s905x2" "s912" "s905d" "s905"
+    "s922x" "s922x-n2" "s905x3" "s905x2" "s912" "s905d" "s905" "s905x"
     "beikeyun" "l1pro"
     "vplus"
     "qemu"
@@ -59,7 +59,7 @@ PACKAGE_SOC_VALUE="all"
 KERNEL_REPO_URL_VALUE="breakingbadboy/OpenWrt"
 # Set kernel tag: kernel_stable, kernel_rk3588, kernel_rk35xx
 KERNEL_TAGS=("stable" "rk3588" "rk35xx")
-STABLE_KERNEL=("6.1.y" "6.12.y")
+STABLE_KERNEL=("6.1.y" "6.6.y")
 RK3588_KERNEL=("6.1.y")
 RK35XX_KERNEL=("6.1.y")
 # The kernel_flippy provided by flippy in ophub/kernel repository: https://github.com/ophub/kernel/releases
@@ -99,7 +99,7 @@ SCRIPT_ROCK5B_FILE="mk_rk3588_rock5b.sh"
 SCRIPT_ROCK5C_FILE="mk_rk3588s_rock5c.sh"
 SCRIPT_S905_FILE="mk_s905_mxqpro+.sh"
 SCRIPT_S905D_FILE="mk_s905d_n1.sh"
-SCRIPT_S905X2_FILE="mk_s905x2_x96max.sh"
+SCRIPT_S905X2_FILE="mk_s905x_s905x2_x96max.sh"
 SCRIPT_S905X3_FILE="mk_s905x3_multi.sh"
 SCRIPT_S912_FILE="mk_s912_zyxq.sh"
 SCRIPT_S922X_FILE="mk_s922x_gtking.sh"
@@ -622,6 +622,7 @@ EOF
                         rock5c)             [[ -f "${SCRIPT_ROCK5C}" ]]          && sudo ./${SCRIPT_ROCK5C} ;;
                         s905)               [[ -f "${SCRIPT_S905}" ]]            && sudo ./${SCRIPT_S905} ;;
                         s905d)              [[ -f "${SCRIPT_S905D}" ]]           && sudo ./${SCRIPT_S905D} ;;
+                        s905x)              [[ -f "${SCRIPT_S905X}" ]]           && sudo ./${SCRIPT_S905X} ;;
                         s905x2)             [[ -f "${SCRIPT_S905X2}" ]]          && sudo ./${SCRIPT_S905X2} ;;
                         s905x3)             [[ -f "${SCRIPT_S905X3}" ]]          && sudo ./${SCRIPT_S905X3} ;;
                         s912)               [[ -f "${SCRIPT_S912}" ]]            && sudo ./${SCRIPT_S912} ;;
