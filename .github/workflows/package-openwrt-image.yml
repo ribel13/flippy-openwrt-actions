@@ -13,7 +13,7 @@ on:
       openwrt_soc:
         description: "Select device board."
         required: false
-        default: "all"
+        default: "s905x"
         type: choice
         options:
           - all
@@ -46,6 +46,7 @@ on:
           - rock5c
           - rk3399
           - s905
+          - s905x
           - s905d
           - s905x2
           - s905x3
@@ -72,11 +73,12 @@ on:
       kernel_repo:
         description: "Set the kernel repository"
         required: false
-        default: "ophub/kernel"
+        default: "ribel13/kernel"
         type: choice
         options:
           - breakingbadboy/OpenWrt
           - ophub/kernel
+          - ribel/kernel
       openwrt_kernel:
         description: "Select kernel version"
         required: false
@@ -118,7 +120,7 @@ on:
         options:
           - ophub
           - angel
-          - freedom
+          - FRDMx
 
 env:
   TZ: Etc/UTC
