@@ -13,12 +13,12 @@ on:
       kernel_source:
         description: "Select the kernel source"
         required: false
-        default: "chanz-x"
+        default: "ribel13"
         type: choice
         options:
           - unifreq
           - ophub
-          - chanz-x
+          - ribel13
       kernel_version:
         description: "Select kernel version"
         required: false
@@ -79,11 +79,11 @@ on:
       kernel_sign:
         description: "Set the kernel custom signature"
         required: false
-        default: "-ophub"
+        default: "-FRDMx"
         type: choice
         options:
           - -ophub
-          - -freedom
+          - -FRDMx
 
 env:
   TZ: Etc/UTC
@@ -150,7 +150,7 @@ jobs:
           api_url="https://api.github.com/repos/${{ inputs.kernel_source }}/linux-${{ inputs.kernel_version }}/git/ref/heads/main"
           source_hash=$(curl -fsSL -m 20 \
               -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Authorization: Bearer ${{ secrets.RELEASES_TOKEN }}" \
               ${api_url} |
               jq -r '.object.sha'
           )
@@ -168,7 +168,7 @@ jobs:
 
       - name: Compile the kernel [ ${{ inputs.kernel_version }} ]
         #uses: ophub/amlogic-s9xxx-armbian@main
-        uses: chanz-x/amlogic-s9xxx-armbian@main
+        uses: ribel13/amlogic-s9xxx-armbian@main
         if: ${{ steps.disk.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: kernel
