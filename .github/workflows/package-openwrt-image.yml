@@ -193,8 +193,9 @@ jobs:
           # Get name (file name) and url (API asset URL)
           latest_version=$(curl -s \
               -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              https://api.github.com/repos/ophub/flippy-openwrt-actions/releases?per_page=20 | \
+              -H "Authorization: Bearer ${{ secrets.RELEASES_TOKEN }}" \
+              ##https://api.github.com/repos/ophub/flippy-openwrt-actions/releases?per_page=20 | \
+              https://api.github.com/repos/ribel13/Actions-OpenWrt/releases/openwrt-armsr-armv8-generic-rootfs.tar.gz | \
               jq -r --arg RTK "OpenWrt_armv8_rootfs" \
               --arg BOARD "-rootfs.tar.gz" \
               '[.[] | select(.tag_name | contains($RTK))] |
@@ -216,7 +217,7 @@ jobs:
           # Download using API method (add octet-stream header)
           echo "Downloading: ${openwrt_filename}"
           curl -fsSL \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Authorization: Bearer ${{ secrets.RELEASES_TOKEN }}" \
               -H "Accept: application/octet-stream" \
               "${latest_url}" \
               -o "${armsr_tarfile_path}/${openwrt_filename}"
